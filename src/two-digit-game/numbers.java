@@ -9,7 +9,6 @@ public class numbers{
 
 		while(true){
 			try{
-
 				System.out.println("Enter a two digit number. The two digits should be different. ");
 				userNumber = input.nextInt();
 			}
@@ -23,7 +22,7 @@ public class numbers{
 				System.out.println("Not good for your game!");
 			}
 
-//		input.close();
+		//input.close();
 
 		}
 	}
