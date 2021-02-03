@@ -5,18 +5,26 @@ public class numbers{
 
 		Scanner input = new Scanner(System.in);
 
-		int userNumber;
+		int userNumber = 0;
 
-		try{
+		while(true){
+			try{
 
-		System.out.println("Enter a two digit number. The two digits should be different. ");
-		userNumber = input.nextInt();
+				System.out.println("Enter a two digit number. The two digits should be different. ");
+				userNumber = input.nextInt();
+			}
+			catch(InputMismatchException exception){
+				System.out.println("Not an integer! Try again!");
+			}
+
+			if(userNumber >= 10 && userNumber <= 99){ 
+				System.out.println("Not good for your game!"); 
+			}else{
+				System.out.println("Not good for your game!");
+			}
+
+//		input.close();
+
 		}
-		catch(InputMismatchException exception){
-			System.out.println("Not an integer! Try again!");
-		}
-
-		input.close();
-
 	}
 }
