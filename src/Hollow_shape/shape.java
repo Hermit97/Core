@@ -30,10 +30,18 @@ public class shape{
 			System.out.print(userChar);
 			}
 		System.out.println();
-		}
-			
 
-		
+		for(int j = 0; j <= howMany - 2; j++){
+			System.out.print(userChar);
+			for(int k = 0; k <= howMany - 2; k++){
+				System.out.println();
+			}
+			System.out.print(userChar);
+			System.out.print("");
 		}
+
+
 	}
-
+		
+	}
+}
