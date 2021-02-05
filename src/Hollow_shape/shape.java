@@ -3,13 +3,12 @@ public class shape{
 
 	public static void main(String[] args){
 	Scanner input = new Scanner(System.in);
-	int howMany;
+	int howMany = 0;
 	char userChar;
 	char startGame;
 
 	System.out.println("Do you want to start(Y/N)");
-	startGame = input.next().charAt(0);
-
+	startGame = input.next().charAt(0); 
 	while(startGame == 'y' || startGame == 'Y'){
 		try{
 			
@@ -24,7 +23,17 @@ public class shape{
 			input.next();
 			}
 
+		System.out.println("What characher?");
+		userChar = input.next().charAt(0);
+
+		for(int i = 0; i <= howMany; i++){
+			System.out.print(userChar);
+			}
+		System.out.println();
+		}
+			
+
 		
 		}
 	}
-}
+
