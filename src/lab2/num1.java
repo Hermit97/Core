@@ -1,3 +1,4 @@
+package lab2;
 import java.util.Scanner;
 import java.util.Random;
 public class num1{
@@ -32,10 +33,19 @@ public class num1{
 	public static boolean isAllEven(int[] list, int size){
 		for(int i = 0; i < size; i++){
 			if(list[i] % 2 == 0)
-				return even;
+				return true;
 			else
 				return false;
 		}
 		
+	}
+
+	//Method check for unique numbers
+	public static boolean isUnique(int[] list, int size){
+		boolean duplicates = false;
+		for(int i = 0; i < list.length; i++)
+			for(int j = i + 1; j < list.length; j++)
+				if(j != i && list[j] == list[i])
+					duplicates = true;
 	}
 }
