@@ -4,9 +4,9 @@ import java.util.Random;
 public class num1{
 	public static final int MAX = 100;
 	public static final int MIN = 1;
+
 	public static void main(String[] args){
 		
-
 	}
 
 	public static void getInt(int[] list){
@@ -64,7 +64,7 @@ public class num1{
 
 	}
 
-	public static void menu(){
+	public static void menu(int[] list, int MIN, int MAX){
 		Scanner input = new Scanner(System.in);
 		Random rand = new Random();
 		int size;
@@ -91,11 +91,9 @@ public class num1{
 			for(int i = 0; i < list.length; i++){
 				System.out.print(list[i] + " " );
 			}
+
+			
 			
 		}
-
-		
-
-		
 	}
 }
