@@ -1,4 +1,4 @@
-package lab2;
+//package Core.src.lab2;
 import java.util.Scanner;
 import java.util.Random;
 public class num1{
@@ -37,6 +37,7 @@ public class num1{
 			else
 				return false;
 		}
+		return true;
 		
 	}
 
@@ -47,5 +48,15 @@ public class num1{
 			for(int j = i + 1; j < list.length; j++)
 				if(j != i && list[j] == list[i])
 					duplicates = true;
+		return duplicates;
+	}
+
+	public static int minGap(int[] list, int size){
+		for(int i = 0; i < size; i++){
+			for(int j = 0; j < list[i]; j += 2)
+				//logic
+
+		}
+
 	}
 }
