@@ -1,5 +1,6 @@
 //package Core.src.lab2;
 import java.util.Scanner;
+import java.util.Arrays;
 import java.util.Random;
 public class num1{
 	public static final int MAX = 100;
@@ -74,10 +75,8 @@ public class num1{
 			if(gap > absDiff){
 				gap = absDiff;
 			}
-
 		}
 		return gap;
-
 	}
 
 	public static int menu(){
@@ -87,19 +86,16 @@ public class num1{
 			System.out.println("-------------------");
 			System.out.prinlnt("2) All unique values?");
 			System.out.prinlnt("3) Print min gap between values?");
-			System.out.prinlnt("4) Statiscits");
+			System.out.prinlnt("4) Statistics");
 			System.out.prinlnt("5) Print 80% percentile");
 			System.out.prinlnt("0) EXIT");
 			System.out.print("Please enter your option: ");
 			option = input.nextInt();
 		}while(option >= 0 && option <= 5);
-		
 		return option;
-
 		}
-
 	//Bubble sort
-	public static int bubbleSort(int[] list, int size){
+	public static int bubbleSort(int[] list){
 		int temp;
 		for(int i = 0; i < list.length; i++){
 			for(int j = 0; j < list.length - 1; j++){
@@ -112,6 +108,50 @@ public class num1{
 		}
 		return list;
 	}
+	//Copies the array into another array
+	public static void copy(int[] list,int[] newList, int size){
+		for(int i = 0; i < size; i++)
+			newList[i] = list[i];
+	}
 
+	public static int top_20(int[] list){
+		Arrays.sort(newList);	
+		int size = (int)(list.length * 0.2);
+		int start = (int)(list.length * 0.8);
 
+		int[] top20 = new int[size + 1];
+
+		for(int i = start; i < arr.length; i++){
+			top20[i - start] = arr[i];
+		}
+		return top20;
+	}
+
+	public static double getMean(int[] list, int size){
+		int total = 0;
+		for(int i = 0; i < list.length; i++){
+			total += list[i];
+		}
+		int avg = total / list.length;
+
+		return avg;
+	}
+
+	public static double getVariance(int[] list, int size){
+		double sum = 0;
+
+		for(int i = 0; i < size; i++){
+			sum += list[i];
+			double mean  = (double)sum / (double) size;
+		}
+
+		double sqDiff = 0;
+		for(int i = 0; i < n; i++)
+			sqDiff += (a[i] - mean) * (a[i] - mean);
+	return (double)sqDiff / size;
+	}
+
+	public static double getDeviation(int[] list, int size){
+		return Math.sqrt(getVariance(list, size));
+	}
 }
