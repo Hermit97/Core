@@ -98,7 +98,20 @@ public class num1{
 
 		}
 
+	//Bubble sort
 	public static int bubbleSort(int[] list, int size){
-
+		int temp;
+		for(int i = 0; i < list.length; i++){
+			for(int j = 0; j < list.length - 1; j++){
+				if(list[j - 1] > list[j]){
+					temp = list[j - 1];
+					list[j - 1] = list[j];
+					list[j] = temp;
+				}
+			}
+		}
+		return list;
 	}
+
+
 }
