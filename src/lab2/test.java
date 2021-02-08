@@ -1,14 +1,14 @@
 import java.util.Scanner;
+import java.util.Arrays;
 import java.util.Random;
 public class test{
 	//public static final int SIZE = 5;
 	public static final int MIN = 0;
 	public static final int MAX = 100;
 
-
 	public static void menu(int[] list, int min, int max, int size){
-		Scanner input = new Scanner(System.in);
 		Random rand = new Random();
+		Scanner input = new Scanner(System.in);
 		//int size;
 		boolean needInt = true;
 		
@@ -38,13 +38,13 @@ public class test{
 		}
 	
 	public static void main(String[] args){
-		int SIZE;
 
-		int[] a = new int[SIZE];
-
+		Scanner input =  new Scanner(System.in);
+		int[] a = new int[];
 		menu(a, a.length, MIN, MAX);
 
 	}
 }
-			
+		/*did it wrong, should be getting the input and stuff from the other 
+		 * functions in num1.java file. Check out the docs for the array and methods again. */
 
