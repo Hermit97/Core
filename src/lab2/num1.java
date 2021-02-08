@@ -98,7 +98,7 @@ public class num1{
 
 		}
 
+	public static int bubbleSort(int[] list, int size){
 
-
-
+	}
 }
