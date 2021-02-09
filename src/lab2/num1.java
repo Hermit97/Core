@@ -9,6 +9,7 @@ public class num1{
 	public static void main(String[] args){
 		Scanner input = new Scanner(System.in);
 		Random rand = new Random();
+		int option = 1;
 
 		String prompt = "Enter a int";
 		System.out.println(prompt);
@@ -19,7 +20,21 @@ public class num1{
 		System.out.println("The list is ");
 		initRand(list, MAX, MIN, size);
 		print(list, size);
-		int choice = menu();
+
+		while(option != 0){
+			option = menu();
+
+			switch(option){
+				case 1:
+					boolean isEven = isAllEven(list, size);
+					if(!isEven)
+						System.out.println("Some values are odd.");
+					else
+						System.out.println("All values are even");
+					
+					print(list, size);
+			}
+		}
 }
 
 	public static int getInt(Scanner input, String prompt){
@@ -29,10 +44,6 @@ public class num1{
 			}
 			
 		return input.nextInt();
-
-		/*for(int i = 0; i < size; i++)
-			list[i] = input.nextInt();
-		input.close();*/
 	}
 
 	public static void initRand(int list[], int max, int min, int size){
@@ -52,13 +63,13 @@ public class num1{
 	public static boolean isAllEven(int[] list, int size){
 		boolean isEven = true;
 		for(int i = 0; i < size; i++){
-			if(list[i] % 2 == 0)
-				isEven = true;
-			else
+			if(list[i] % 2 != 0){
+
 				isEven = false;
+				break;
+			}
 		}
 		return isEven;
-		
 	}
 
 	//Method check for unique numbers
@@ -85,6 +96,7 @@ public class num1{
 
 	public static int menu(){
 		int option;
+		String prompt = "Please enter your option: ";
 		Scanner input = new Scanner(System.in);
 		do{
 			System.out.println("Your options are: ");
@@ -96,8 +108,9 @@ public class num1{
 			System.out.println("5) Print 80% percentile");
 			System.out.println("0) EXIT");
 			System.out.print("Please enter your option: ");
-			option = input.nextInt();
-		}while(option >= 0 && option <= 5);
+
+			option = getInt(input, prompt);
+		}while(option < 0 || option > 5);
 		return option;
 		}
 	//Bubble sort
