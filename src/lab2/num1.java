@@ -31,6 +31,7 @@ public class num1{
 						System.out.println("Some values are odd.");
 					else
 						System.out.println("All values are even");
+						break;
 
 				case 2:
 					boolean unique = isUnique(list, size);
@@ -38,8 +39,19 @@ public class num1{
 						System.out.println("Some values appear multiple times.");
 					else
 						System.out.println("All values are unique.");
-					
-					
+						break;
+
+				case 3:
+						System.out.println("The gap is " + minGap(list, size));
+						break;
+
+				case 4:
+						print(list, size);
+						System.out.println(" The mean for this list is " + getMean(list, size));
+						break;
+				
+				case 0:
+						System.exit(0);
 			}
 		}
 }
@@ -92,9 +104,9 @@ public class num1{
 
 	public static int minGap(int[] list, int size){
 		int gap = list[1] - list[0];
-		for(int i = 0; i < size; i++){
-			int absDiff = Math.abs(list[i] - list[i - 1]);
-			if(gap > absDiff){
+		for(int i = 1; i < size - 1; i++){
+			int absDiff = list[i + 1] - list[i];
+			if(absDiff < gap){
 				gap = absDiff;
 			}
 		}
@@ -121,36 +133,47 @@ public class num1{
 		return option;
 		}
 	//Bubble sort
-	public static int[] bubbleSort(int[] list){
-		int temp;
-		for(int i = 0; i < list.length; i++){
-			for(int j = 0; j < list.length - 1; j++){
+	public static void bubbleSort(int[] list, int size){
+		
+		for(int i = 0; i < size - 1; i++){
+			for(int j = 0; j < size - i - 1; j++){
 				if(list[j - 1] > list[j]){
-					temp = list[j - 1];
-					list[j - 1] = list[j];
-					list[j] = temp;
+					int temp = list[j];
+					list[j] = list[j + 1];
+					list[j + 1] = temp;
 				}
 			}
 		}
-		return list;
 	}
 	//Copies the array into another array
-	public static void copy(int[] list,int[] newList, int size){
+	public static void copy(int[] list1, int[] newList1, int size){
 		for(int i = 0; i < size; i++)
-			newList[i] = list[i];
+			newList1[i] = list1[i];
 	}
 
-	public static int[] top_20(int[] list){
-		Arrays.sort(list);	
-		int size = (int)(list.length * 0.2);
-		int start = (int)(list.length * 0.8);
-
-		int[] top20 = new int[size + 1];
-
-		for(int i = start; i < list.length; i++){
-			top20[i - start] = list[i];
+	public static void top_20(int[] list, int size){
+		int list1[] = new int[size];
+//		copy(list, newList, size);
+		bubbleSort(list, size);
+		System.out.println("The list is sorted");
+		for(int i = 0; i < size; i++){
+			System.out.print(list[i] + " ");
 		}
-		return top20;
+		System.out.println();
+		System.out.println("80%-percentile from this list:");
+		int twentryPrecent = size * 20 / 100;
+		int count = 0;
+		
+		for(int i = size - 1; i >= 0; i--){
+			if(count < twentryPrecent){
+
+				System.out.print(list[i] + " ");
+				count++;
+			}else{
+				break;
+			}
+		}
+		System.out.println();
 	}
 
 	public static double getMean(int[] list, int size){
