@@ -31,8 +31,15 @@ public class num1{
 						System.out.println("Some values are odd.");
 					else
 						System.out.println("All values are even");
+
+				case 2:
+					boolean unique = isUnique(list, size);
+					if(!unique)
+						System.out.println("Some values appear multiple times.");
+					else
+						System.out.println("All values are unique.");
 					
-					print(list, size);
+					
 			}
 		}
 }
@@ -75,11 +82,11 @@ public class num1{
 	//Method check for unique numbers
 	public static boolean isUnique(int[] list, int size){
 		//this is probarbly wrong, gotta come to back to it. 
-		boolean duplicates = false;
-		for(int i = 0; i < list.length; i++)
-			for(int j = i + 1; j < list.length; j++)
-				if(j != i && list[j] == list[i])
-					duplicates = true;
+		boolean duplicates = true;
+		for(int i = 0; i < size; i++)
+			for(int j = i + 1; j < size; j++)
+				if(list[j] == list[i])
+					duplicates = false;
 		return duplicates;
 	}
 
