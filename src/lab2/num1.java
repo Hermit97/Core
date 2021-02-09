@@ -5,31 +5,34 @@ import java.util.Random;
 public class num1{
 	public static final int MAX = 100;
 	public static final int MIN = 1;
-//Add size to all methods
+
 	public static void main(String[] args){
 		Scanner input = new Scanner(System.in);
 		Random rand = new Random();
-		boolean needInt = true;
-		int size;
-		
-		while(needInt){
 
-		try{
-			System.out.print("How many  elements: ");
-			size = input.nextInt();
-		}
-		catch(Exception e){
+		String prompt = "Enter a int";
+		System.out.println(prompt);
+		int size = getInt(input, prompt);
+
+		int[] list = new int[size];
+
+		System.out.println("The list is ");
+		initRand(list, MAX, MIN, size);
+		print(list, size);
+		int choice = menu();
+}
+
+	public static int getInt(Scanner input, String prompt){
+			while(!input.hasNextInt()){
 			input.next();
-			System.out.print("Not an integer! Try again!");
+			System.out.print("Not an integer! Try again!"); System.out.println(prompt);
 			}
-		}	
-	}
+			
+		return input.nextInt();
 
-	public static void getInt(int[] list, int size){
-		Scanner input = new Scanner(System.in);
-		for(int i = 0; i < size; i++)
+		/*for(int i = 0; i < size; i++)
 			list[i] = input.nextInt();
-		input.close();
+		input.close();*/
 	}
 
 	public static void initRand(int list[], int max, int min, int size){
@@ -86,6 +89,7 @@ public class num1{
 		do{
 			System.out.println("Your options are: ");
 			System.out.println("-------------------");
+			System.out.println("1) All even values?");
 			System.out.println("2) All unique values?");
 			System.out.println("3) Print min gap between values?");
 			System.out.println("4) Statistics");
