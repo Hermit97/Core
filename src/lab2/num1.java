@@ -10,6 +10,7 @@ public class num1{
 		Scanner input = new Scanner(System.in);
 		Random rand = new Random();
 		boolean needInt = true;
+		int size;
 		
 		while(needInt){
 
@@ -81,21 +82,22 @@ public class num1{
 
 	public static int menu(){
 		int option;
+		Scanner input = new Scanner(System.in);
 		do{
 			System.out.println("Your options are: ");
 			System.out.println("-------------------");
-			System.out.prinlnt("2) All unique values?");
-			System.out.prinlnt("3) Print min gap between values?");
-			System.out.prinlnt("4) Statistics");
-			System.out.prinlnt("5) Print 80% percentile");
-			System.out.prinlnt("0) EXIT");
+			System.out.println("2) All unique values?");
+			System.out.println("3) Print min gap between values?");
+			System.out.println("4) Statistics");
+			System.out.println("5) Print 80% percentile");
+			System.out.println("0) EXIT");
 			System.out.print("Please enter your option: ");
 			option = input.nextInt();
 		}while(option >= 0 && option <= 5);
 		return option;
 		}
 	//Bubble sort
-	public static int bubbleSort(int[] list){
+	public static int[] bubbleSort(int[] list){
 		int temp;
 		for(int i = 0; i < list.length; i++){
 			for(int j = 0; j < list.length - 1; j++){
@@ -114,15 +116,15 @@ public class num1{
 			newList[i] = list[i];
 	}
 
-	public static int top_20(int[] list){
-		Arrays.sort(newList);	
+	public static int[] top_20(int[] list){
+		Arrays.sort(list);	
 		int size = (int)(list.length * 0.2);
 		int start = (int)(list.length * 0.8);
 
 		int[] top20 = new int[size + 1];
 
-		for(int i = start; i < arr.length; i++){
-			top20[i - start] = arr[i];
+		for(int i = start; i < list.length; i++){
+			top20[i - start] = list[i];
 		}
 		return top20;
 	}
@@ -142,12 +144,12 @@ public class num1{
 
 		for(int i = 0; i < size; i++){
 			sum += list[i];
-			double mean  = (double)sum / (double) size;
 		}
+			double mean  = (double)sum / (double) size;
 
 		double sqDiff = 0;
-		for(int i = 0; i < n; i++)
-			sqDiff += (a[i] - mean) * (a[i] - mean);
+		for(int i = 0; i < size; i++)
+			sqDiff += (list[i] - mean) * (list[i] - mean);
 	return (double)sqDiff / size;
 	}
 
