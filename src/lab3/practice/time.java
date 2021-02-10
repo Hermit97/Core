@@ -4,8 +4,6 @@ public class Time{
 	private int mins;
 	private int secs;
 
-
-
 //Deafult constructor
 public time(){
 	hrs = 0;
@@ -39,5 +37,45 @@ public int getMinutes(){
 public int getSeconds(){
 	return secs;
 }
+
+public void printTimeMilitary(){
+	System.out.print((hrs < 10? "0": "") + hrs + ":");
+	System.out.print((mins < 10? "0": "") + mins + ":");
+	System.out.print((secs < 10? "0": "") + secs + ":");
+}
+
+public void printTimeStandard(){
+	System.out.print((hrs == 0 || hrs == 12? 12: hrs % 12) + ":");
+	System.out.print((mins < 10? "0": "") + mins + ":");
+	System.out.print((secs < 10? "0": "") + secs + ":");
+	System.out.print((hrs < 12? "AM": "PM"));
+}
+
+public String toString(){
+	return hrs + ":" + mins + ":" + secs;
+}
+
+public void increment(){
+	secs++;
+	if(secs > 59){
+		secs  = 0;
+		mins++;
+		if(mins > 59){
+			mins = 0; 
+			hrs++;
+			if(hrs > 23)
+				hrs = 0;
+		}
+	}
+}
+
+public boolean equals(time  otherTime){
+	return (hrs == otherTime.hrs && mins == otherTime.mins && secs == otherTime.secs);
+}
+
+public boolean lessThan(time  otherTime){
+	return (hrs < t.hrs || hrs == t.hrs && mins < t.mins || hrs == t.hrs && mins == t.secs);
+}
+
 
 }
