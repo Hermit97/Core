@@ -5,14 +5,14 @@ public class Time{
 	private int secs;
 
 //Deafult constructor
-public time(){
+public Time(){
 	hrs = 0;
 	mins = 0;
 	secs = 0;
 
 }
 
-public Time(int h, int m, inst s){
+public Time(int h, int m, int s){
 	hrs = h;
 	mins = m;
 	secs = s;
@@ -69,12 +69,26 @@ public void increment(){
 	}
 }
 
-public boolean equals(time  otherTime){
+public boolean equals(Time  otherTime){
 	return (hrs == otherTime.hrs && mins == otherTime.mins && secs == otherTime.secs);
 }
 
-public boolean lessThan(time  otherTime){
-	return (hrs < t.hrs || hrs == t.hrs && mins < t.mins || hrs == t.hrs && mins == t.secs);
+public boolean lessThan(Time  t){
+	 return (hrs < t.hrs || hrs == t.hrs && mins < t.mins || hrs == t.hrs && mins == t.mins && secs < t.secs);
+}
+
+public void copy(Time otherTime){
+	hrs = otherTime.hrs;
+	mins = otherTime.mins;
+	secs = otherTime.secs;
+}
+
+public Time copyTime(){
+	Time temp = new Time();
+	temp.hrs = hrs;
+	temp.mins = mins;
+	temp.secs = secs;
+	return temp;
 }
 
 
