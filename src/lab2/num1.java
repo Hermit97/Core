@@ -1,4 +1,5 @@
 //package Core.src.lab2;
+
 import java.util.Scanner;
 import java.util.Arrays;
 import java.util.Random;

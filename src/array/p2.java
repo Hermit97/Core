@@ -54,7 +54,7 @@ public class p2{
 			list[i] = input.nextInt();
 	}
 
-	//Method to input data from user
+	//Method to get random data 
 	public static void randArray(int[] list, int size, int low, int up){
 		Scanner input = new Scanner(System.in);
 		for(int i = 0; i < size; i++)
