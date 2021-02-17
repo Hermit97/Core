@@ -2,25 +2,50 @@ public class Employee extends Person{
 	private double payRate;
 	private double hoursWorked;
 	private String deparment;
-
+	
+	
 	private final int HOURS = 40;
 	private final double OVERTIME = 1.5;
-
+	
 	//Default constructor
 	public Employee(){
-		//super();
+		super();
 		payRate = 0;
 		hoursWorked = 0;
 		deparment = "";
 	}
 
 	//Alternate constructor 
-	public Employee(double payRate, double hoursWorked, String deparment){
-		//super(firstName, lastName);
+	public Employee(String firstName, String lastName, double payRate, double hoursWorked, String deparment){
+		super(firstName, lastName);
 		
 		this.payRate = payRate;
 		this.hoursWorked = hoursWorked;
 		this.deparment = deparment;
+	}
+
+	public void setPayRate(double payRaye){
+		this.payRate = payRaye;
+	}
+
+	public void sethoursWorked(double hoursWorked){
+		this.hoursWorked = hoursWorked;
+	}
+
+	public void deparment(String deparment){
+		this.deparment = deparment;
+	}
+
+	public double getPayRate(){
+		return payRate;
+	}
+
+	public double getHoursWorked(){
+		return hoursWorked;
+	}
+
+	public String getDept(){
+		return deparment;
 	}
 
 	public String toString(){
@@ -46,8 +71,7 @@ public class Employee extends Person{
 	}
 
 	public Employee getCopy(){
-		Employee emp = new Employee (this.payRate, this.hoursWorked, deparment);
-		return emp;
+		return new  Employee(firstName, lastName, payRate, hoursWorked, deparment);
 	}
 
 	public void copy(Employee e){
