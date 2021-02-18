@@ -19,7 +19,7 @@ public class ClientEmployee{
 		first = input.nextLine();
 
 		System.out.println("Enter the deparment name");
-		dept = input.nextLine();
+		dept = input.next();
 
 		System.out.println("Enter the employee pay rate");
 		pay_rate = input.nextDouble();
@@ -28,10 +28,14 @@ public class ClientEmployee{
 		hours = input.nextInt();
 
 		newEmp.setPayRate(pay_rate);
-		System.out.println(newEmp.getPayRate());
+		System.out.println(newEmp);
+
+		newEmp.setDepartment(dept);
+		System.out.println(newEmp);
+
+		newEmp.setName(last, first);
 		
 		System.out.println("--- Record for both employeees with overidden .toString from subclass ---");
-
-		
+		System.out.println(newEmp.toString());
 	}
 }

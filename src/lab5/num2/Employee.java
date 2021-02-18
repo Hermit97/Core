@@ -3,7 +3,6 @@ public class Employee extends Person{
 	private double hoursWorked;
 	private String deparment;
 	
-	
 	private final int HOURS = 40;
 	private final double OVERTIME = 1.5;
 	
@@ -32,7 +31,7 @@ public class Employee extends Person{
 		this.hoursWorked = hoursWorked;
 	}
 
-	public void deparment(String deparment){
+	public void setDepartment(String deparment){
 		this.deparment = deparment;
 	}
 
@@ -49,11 +48,11 @@ public class Employee extends Person{
 	}
 
 	public String toString(){
-		return "The wages for " + this.firstName + "from " + deparment + "department are " + calculateWage();
+		return "The wages for " + super.toString() + "from " + this.deparment + " department are " + calculateWage();
 	}
 
 	public void print(){
-		System.out.println("The employe" + this.firstName + " from the department" + deparment);
+		System.out.println("The employe" + super.toString() + " from the department" + deparment);
 	}
 	
 	public double calculateWage(){
@@ -71,7 +70,7 @@ public class Employee extends Person{
 	}
 
 	public Employee getCopy(){
-		return new  Employee(firstName, lastName, payRate, hoursWorked, deparment);
+		return new  Employee(super.getFirstName(), super.getLastName(), payRate, hoursWorked, deparment);
 	}
 
 	public void copy(Employee e){
