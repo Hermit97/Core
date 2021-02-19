@@ -30,6 +30,8 @@ public class ClientEmployee{
 		newEmp.setAll(first, last, pay_rate, hours, dept);
 		
 		System.out.println("--- Record for both employeees with overidden .toString from subclass ---");
+		System.out.println(prof.toString());
+		System.out.println("-------------------------------------------");
 		System.out.println(newEmp.toString());
 	}
 }

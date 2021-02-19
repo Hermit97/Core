@@ -51,8 +51,21 @@ public class Employee extends Person{
 	}
 	
 	public double calculateWage(){
-		double regularPay = payRate * HOURS;
-		double totalWage = regularPay * OVERTIME;
+		double overTimeHours;
+		double totalWage;
+		double regularPay;
+		double totalOverWage;
+		double totalOverTime;
+
+		//overtime
+		if(hoursWorked > HOURS){
+			overTimeHours = hoursWorked - HOURS;
+			totalOverTime = payRate * OVERTIME * overTimeHours;
+			totalWage = (payRate * HOURS) + totalOverTime;
+		//no overtime
+		}else{
+			totalWage =  payRate *  HOURS;
+		}
 		return totalWage;
 	}
 
