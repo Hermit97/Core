@@ -9,12 +9,12 @@ public class Person{
 	}
 
 	public Person(String firstName, String lastName){
-		setName(firstName, lastName);
+		setName(lastName, firstName);
 	}
 
-	public void setName(String first, String last){
-		firstName = first;
-		lastName = last;
+	public void setName(String firstName, String lastName){
+		this.firstName = firstName;
+		this.lastName = lastName;
 	}
 
 	public String getFirstName(){
@@ -25,16 +25,16 @@ public class Person{
 		return lastName;
 	}
 
-	public void printLastFirst(){
-		System.out.print(lastName + "," + firstName);
+	public String printLastFirst(){
+		return lastName + ", " + firstName;
 	}
 
 	public void print(){
-		System.out.print(firstName + lastName);
+		System.out.print(lastName + " " + firstName);
 	}
 
 	public String toString(){
-		return firstName + lastName;
+		return printLastFirst(); 
 	}
 
 	public boolean equals(Object obj) {

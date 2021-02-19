@@ -16,22 +16,17 @@ public class Employee extends Person{
 
 	//Alternate constructor 
 	public Employee(String firstName, String lastName, double payRate, double hoursWorked, String deparment){
-		super(firstName, lastName);
+		super.setName(firstName, lastName);
 		
 		this.payRate = payRate;
 		this.hoursWorked = hoursWorked;
 		this.deparment = deparment;
 	}
 
-	public void setPayRate(double payRaye){
-		this.payRate = payRaye;
-	}
-
-	public void sethoursWorked(double hoursWorked){
+	public void setAll(String firstName, String lastName, double payRate, double hoursWorked, String deparment){
+		super.setName(firstName, lastName);
+		this.payRate = payRate;
 		this.hoursWorked = hoursWorked;
-	}
-
-	public void setDepartment(String deparment){
 		this.deparment = deparment;
 	}
 
@@ -48,7 +43,7 @@ public class Employee extends Person{
 	}
 
 	public String toString(){
-		return "The wages for " + super.toString() + "from " + this.deparment + " department are " + calculateWage();
+		return "The wages for " + super.toString() + " from " + this.deparment + " department are " + calculateWage();
 	}
 
 	public void print(){
@@ -70,7 +65,7 @@ public class Employee extends Person{
 	}
 
 	public Employee getCopy(){
-		return new  Employee(super.getFirstName(), super.getLastName(), payRate, hoursWorked, deparment);
+		return new  Employee(super.getLastName(), super.getFirstName(), payRate, hoursWorked, deparment);
 	}
 
 	public void copy(Employee e){

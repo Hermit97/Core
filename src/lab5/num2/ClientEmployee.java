@@ -26,14 +26,8 @@ public class ClientEmployee{
 
 		System.out.println("Enter hours worked");
 		hours = input.nextInt();
-
-		newEmp.setPayRate(pay_rate);
-		System.out.println(newEmp);
-
-		newEmp.setDepartment(dept);
-		System.out.println(newEmp);
-
-		newEmp.setName(last, first);
+	
+		newEmp.setAll(first, last, pay_rate, hours, dept);
 		
 		System.out.println("--- Record for both employeees with overidden .toString from subclass ---");
 		System.out.println(newEmp.toString());
