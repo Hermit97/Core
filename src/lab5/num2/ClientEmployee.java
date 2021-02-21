@@ -8,7 +8,7 @@ public class ClientEmployee{
 
 		Employee newEmp = new Employee();
 		//subclass alternate
-		Employee prof = new Employee("Shawn", "Ali", 25.50, 50, "COSC");
+		Employee prof = new Employee("John", "Doe", 25.50, 50, "COSC");
 
 		//subclass default constructor invoked
 
@@ -31,7 +31,22 @@ public class ClientEmployee{
 		
 		System.out.println("--- Record for both employeees with overidden .toString from subclass ---");
 		System.out.println(prof.toString());
-		System.out.println("-------------------------------------------");
 		System.out.println(newEmp.toString());
+
+		System.out.println("--- Output with calls to getters from the method print from subclass ---");
+		newEmp.print();
+		System.out.println();
+		prof.print();
+		System.out.println();
+
+		System.out.println("--- Output with calls from the getters from the superclass ---");
+		System.out.println("The wages for " + newEmp.getFirstName() + " " + newEmp.getLastName() 
+							+ " from the " + newEmp.getDept() + " Department are " + newEmp.calculateWage());
+
+		System.out.println("--- Call to overridden equals/subclass for 2 Employee objects---");
+		if(newEmp.equals(prof))
+			System.out.println("They are equal");
+		else
+			System.out.println("Coudn't find an employee with the same record.");
 	}
 }

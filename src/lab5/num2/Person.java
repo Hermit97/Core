@@ -5,7 +5,6 @@ public class Person{
 	public Person(){
 		firstName = "";
 		lastName = "";
-
 	}
 
 	public Person(String firstName, String lastName){
@@ -25,16 +24,16 @@ public class Person{
 		return lastName;
 	}
 
-	public String printLastFirst(){
-		return lastName + ", " + firstName;
+	public void printLastFirst(){
+		System.out.print(lastName + " , " + firstName);
 	}
 
 	public void print(){
-		System.out.print(lastName + " " + firstName);
+		System.out.print(firstName + " " + lastName);
 	}
 
 	public String toString(){
-		return printLastFirst(); 
+		return lastName + " , " + firstName; 
 	}
 
 	public boolean equals(Object obj) {

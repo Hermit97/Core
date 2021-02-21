@@ -47,7 +47,13 @@ public class Employee extends Person{
 	}
 
 	public void print(){
-		System.out.println("The employe" + super.toString() + " from the department" + deparment);
+		System.out.print("The employee " );
+		super.print();
+		System.out.print(" from the " + this.deparment + " worked " + this.hoursWorked 
+						+ " with a pay of $" + this.payRate + ". The wages for ");
+		super.print();
+		System.out.print(" are $" + calculateWage());
+	//	System.out.println("The employe " + super.toString() + " from the department " + deparment + " worked " + hoursWorked + " with the pay rate of $" + payRate + "." + " The wages for " + super.print() + " are " + calculateWage());
 	}
 	
 	public double calculateWage(){
@@ -85,6 +91,5 @@ public class Employee extends Person{
 		payRate = e.payRate;
 		hoursWorked = e.hoursWorked;
 		deparment = e.deparment;
-
 	}
 }
